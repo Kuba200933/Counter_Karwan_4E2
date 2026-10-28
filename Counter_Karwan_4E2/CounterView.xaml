@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentView xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Counter_Karwan_4E2.CounterView">
+
+    <Border x:Name="CounterBorder"
+            Stroke="Gray" 
+            StrokeThickness="1" 
+            StrokeShape="RoundRectangle 8"
+            Margin="3">
+
+        <VerticalStackLayout Padding="30"
+                             Spacing="10">
+
+            <BoxView x:Name="CounterColorLable"
+                     BackgroundColor="#787878"
+                     HeightRequest="18"
+                     HorizontalOptions="Fill"/>
+
+            <Label Text="{Binding CounterName}"
+                   HorizontalOptions="Center"
+                   FontSize="30"
+                   TextColor="#6E6E6E"/>
+
+            <Label Text="{Binding CounterLabelText}"
+                   HorizontalOptions="Center"
+                   FontSize="100"
+                   TextColor="#D1D1D1"/>
+
+            <HorizontalStackLayout HorizontalOptions="Center"
+                                       Spacing="6">
+
+                <Button x:Name="CounterSubBtn"
+                        Text="-"
+                        Clicked="OnCounterSubClicked"
+                        HorizontalOptions="Center"
+                        BackgroundColor="#3f2cbc"
+                        TextColor="White"
+                        WidthRequest="50"
+                        FontSize="30"
+                        SemanticProperties.Description="{Binding SubDescription}"/>
+
+                <VerticalStackLayout VerticalOptions="Center"
+                                         HorizontalOptions="Center"
+                                         Spacing="6">
+
+                    <Button x:Name="CounterResetButton"
+                            Text="Reset"
+                            Clicked="OnCounterResetClicked"
+                            HorizontalOptions="Center"
+                            BackgroundColor="#3b79ff"
+                            TextColor="White"
+                            FontSize="12"
+                            SemanticProperties.Description="{Binding ResetDescription}"/>
+
+                    <Button x:Name="CounterDeleteBtn"
+                            Text="Usuń"
+                            Clicked="OnCounterDeleteClicked"
+                            HorizontalOptions="Center"
+                            BackgroundColor="#ff3b3b"
+                            TextColor="White"
+                            FontSize="12"
+                            SemanticProperties.Description="{Binding DeleteDescription}"/>
+                    
+                </VerticalStackLayout>
+
+                <Button x:Name="CounterAddBtn"
+                        Text="+" 
+                        Clicked="OnCounterAddClicked"
+                        HorizontalOptions="Center"
+                        BackgroundColor="#2c68bc"
+                        TextColor="White"
+                        WidthRequest="50"
+                        FontSize="30"
+                        SemanticProperties.Description="{Binding AddDescription}" />
+
+            </HorizontalStackLayout>
+        </VerticalStackLayout>
+    </Border>
+</ContentView>

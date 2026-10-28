@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Counter_Karwan_4E2"
+             x:Class="Counter_Karwan_4E2.AllCountersPage"
+             Title="AllCountersPage">
+    
+    <VerticalStackLayout>
+        <HorizontalStackLayout Margin="0,0,0,20"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Center" 
+                               Spacing="20">
+            
+            <Border Stroke="#2C43BC" 
+                    StrokeThickness="1" 
+                    StrokeShape="RoundRectangle 8">
+
+                <Entry x:Name="CounterNameEntry"
+                       Placeholder="Podaj nazwę..." 
+                       PlaceholderColor="#A8A7A7"/>
+
+            </Border>
+
+            <Border Stroke="#2C43BC" 
+                    StrokeThickness="1" 
+                    StrokeShape="RoundRectangle 8">
+
+                <Entry x:Name="CounterStartingValueEntry"
+                       Placeholder="Podaj wartość początkową..." 
+                       PlaceholderColor="#A8A7A7"/>
+
+            </Border>
+
+            <Border Stroke="#2C43BC" 
+                    StrokeThickness="1" 
+                    StrokeShape="RoundRectangle 8">
+
+                <Picker x:Name="CounterColorPicker"
+                        Title="Wybierz kolor"
+                        Margin="10"
+                        SemanticProperties.Description="{Binding ColorPickerDescription}">
+
+                    <Picker.Items>
+                        <x:String>Szary</x:String>
+                        <x:String>Czarny</x:String>
+                        <x:String>Biały</x:String>
+                        <x:String>Czerowny</x:String>
+                        <x:String>Pomarańczowy</x:String>
+                        <x:String>Zółty</x:String>
+                        <x:String>Zielony</x:String>
+                        <x:String>Cyjan</x:String>
+                        <x:String>Niebieski</x:String>
+                        <x:String>Fioletowy</x:String>
+                        <x:String>Różowy</x:String>
+                    </Picker.Items>
+                </Picker>
+            </Border>
+
+            <Button 
+                Text="Dodaj" 
+                Clicked="OnAddCounterClicked"
+                BackgroundColor="#2C43BC" 
+                TextColor="White"
+                SemanticProperties.Description="{Binding AddNewCounterDescription}"/>
+            
+        </HorizontalStackLayout>
+
+        <Label x:Name="ErrorLabel" 
+               TextColor="red"
+               HorizontalOptions="Center"/>
+
+        <BoxView
+            Color="DarkGray"
+            HeightRequest="1"
+            HorizontalOptions="Fill"/>
+
+        <ScrollView HeightRequest="600">
+            <FlexLayout x:Name="AllCountersContainer"
+                        Direction="Row"
+                        Wrap="Wrap"
+                        JustifyContent="Center"
+                        AlignItems="Start"
+                        Padding="20" />
+            
+        </ScrollView>
+    </VerticalStackLayout>
+</ContentPage>
